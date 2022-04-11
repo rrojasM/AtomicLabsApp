@@ -24,7 +24,6 @@ const data = [
 const Step2 = () => {
     const [users, setUser] = useState(data);
 
-
     useEffect(() => {
     }, [users])
 
@@ -34,16 +33,16 @@ const Step2 = () => {
                 <Text style={styles.title}>NUESTRO EQUIPO</Text>
                 <FlatList
                     data={users}
-
+                    keyExtractor={item => item.id}
                     renderItem={({ item }) => {
                         return (
                             <>
                                 <Card
                                     containerStyle={{
-                                        backgroundColor: '#02548C',                                   
+                                        backgroundColor: '#02548C',
                                         height: 150,
                                         borderRadius: 10,
-                                        borderColor:'#02548C',
+                                        borderColor: '#02548C',
                                         justifyContent: 'center'
                                     }}
                                 >
@@ -59,6 +58,7 @@ const Step2 = () => {
                             </>
                         )
                     }}
+                    nestedScrollEnabled={true}
                 />
 
             </View>
@@ -71,7 +71,7 @@ const Step2 = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        
+
     },
     image: {
         width: 50,
