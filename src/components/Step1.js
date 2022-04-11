@@ -6,7 +6,7 @@ const Step1 = () => {
     return (
         <>
             <View style={styles.container}>
-                <Text style={styles.title}>SOMOS EL BRAZO DERECHO DE LA TECNOLOGÍA</Text>
+                <Text style={styles.title}>SOMOS EL BRAZO DERECHO <Text style={{color:'#FB4C0C'}}>DE LA TECNOLOGÍA</Text></Text>
 
                 <Card
                     containerStyle={{
@@ -22,9 +22,9 @@ const Step1 = () => {
                         style={styles.image}
                         source={require('../assets/GroupUser.png')}
                     />
-                    <Text>IMAGINA</Text>
                     <Text>{'\u2022'}</Text>
-
+                    <Text>IMAGINA</Text>
+                    
                 </Card>
             </View>
         </>

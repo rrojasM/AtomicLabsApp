@@ -30,7 +30,7 @@ const Step2 = () => {
     return (
         <>
             <View style={styles.container}>
-                <Text style={styles.title}>NUESTRO EQUIPO</Text>
+                <Text style={styles.title}><Text style={{color:'#FFF'}}>NUESTRO</Text> EQUIPO</Text>
                 <FlatList
                     data={users}
                     keyExtractor={item => item.id}
@@ -40,7 +40,7 @@ const Step2 = () => {
                                 <Card
                                     containerStyle={{
                                         backgroundColor: '#02548C',
-                                        height: 150,
+                                        height: 250,
                                         borderRadius: 10,
                                         borderColor: '#02548C',
                                         justifyContent: 'center'

@@ -8,12 +8,10 @@ import {
     Platform,
     Dimensions,
     TouchableWithoutFeedback,
+    TouchableHighlight,
 
 } from 'react-native';
-
 import { ScrollView } from 'react-native-gesture-handler';
-
-/* import { ScrollView } from 'react-native-virtualized-view'; */
 
 ///components
 import Step1 from '../components/Step1';
@@ -21,16 +19,16 @@ import Step2 from '../components/Step2';
 import Footer from '../components/Footer';
 import { Button } from 'react-native-elements';
 
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
 
 const Home = ({ navigation }) => {
 
-
     const scrollRef = useRef();
-
     const tapScroll = () => {
 
         const h = Dimensions.get('window').height;
-        let scroll = h * 3;
+        let scroll = h * 1;
         scrollRef.current?.scrollTo({
             x: 0,
             y: scroll,
@@ -44,55 +42,54 @@ const Home = ({ navigation }) => {
         <>
             <View style={styles.container}>
                 <ScrollView style={{ flexGrow: 1 }} ref={scrollRef} nestedScrollEnabled={true}>
-
-                    <View style={styles.headerTitle}>
-                        <Text style={styles.title}>
-                            <Text style={{ color: '#FFF' }}>Desarrolla todo</Text> {"\n"}
-                            tu POTENCIAL
-                            {"\n"}
-                            <Text style={{ color: '#FFF' }}>dentro del equipo</Text>{"\n"}
-                            ATOMIC <Text style={{ color: '#FFF' }} >LABS</Text>
-                        </Text>
-
-
-                    </View>
-
-                    <View style={{ justifyContent: 'center', alignItems: 'center', margin: 10 }}>
-                        <TouchableWithoutFeedback
-                            onPress={tapScroll}
-                        >
-                            <Image
-                                style={{ width: 50, height: 50 }}
-                                source={require('../assets/Group4013x.png')}
-                            />
-                        </TouchableWithoutFeedback>
-
-                        <Text style={{ color: '#FFF', fontSize: 25, fontWeight: 'bold' }}>Quiero saber más</Text>
-                    </View>
                     <ImageBackground
                         resizeMode='cover'
                         style={styles.image}
                         source={require('../assets/MaskGroup.png')}
                     >
+                        <View style={styles.headerTitle}>
+                            <Text style={styles.title}>
+                                <Text style={{ color: '#FFF' }}>Desarrolla todo</Text> {"\n"}
+                                tu POTENCIAL
+                                {"\n"}
+                                <Text style={{ color: '#FFF' }}>dentro del equipo</Text>{"\n"}
+                                ATOMIC <Text style={{ color: '#FFF' }} >LABS</Text>
+                            </Text>
+
+
+                        </View>
+
+                        <View style={{ justifyContent: 'center', alignItems: 'center', margin: 10 }}>
+                            <TouchableWithoutFeedback
+                                onPress={tapScroll}
+                            >
+                                <Image
+                                    style={{ width: 50, height: 50 }}
+                                    source={require('../assets/Group4013x.png')}
+                                />
+                            </TouchableWithoutFeedback>
+
+                            <Text style={{ color: '#FFF', fontSize: 25, fontWeight: 'bold' }}>Quiero saber más</Text>
+                        </View>
                         <View style={{ alignContent: 'center', justifyContent: 'center' }} >
                             <Image
-                                style={{ width: 350, height: 300, marginVertical: 100, marginLeft: 25 }}
+                                style={{ width: 350, height: 300, marginVertical: 100, marginLeft: 20, bottom:10 }}
                                 source={require('../assets/Group4032.png')}
                             />
 
 
                         </View>
 
+                        <View style={{ alignItems: 'center' }}>
+                            <TouchableHighlight
+                                style={styles.button}
+                                onPress={() => navigation.navigate("Form")}
+                            >
+                                <Text style={{ color: '#00609C', textAlign: 'center', fontWeight:'500' }} >!Quiero ser parte!</Text>
+                            </TouchableHighlight>
+                        </View>
+
                     </ImageBackground>
-
-                    <View>
-                        <Button
-                            title="Navegar"
-                            onPress={() => navigation.navigate("Form")}
-                        />
-                    </View>
-
-
 
                     <View>
                         <Step1 />
@@ -120,9 +117,9 @@ const styles = StyleSheet.create({
 
     image: {
         bottom: 10,
-        width: 750,
-        height: 810,
-        position: 'relative',
+        width: WIDTH,
+        height: HEIGHT,
+        /* position: 'relative', */
     },
 
     title: {
@@ -134,10 +131,18 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         margin: 10,
-        flexDirection: 'row',
         alignItems: 'center',
         alignContent: 'center'
-    }
+    },
+    button: {
+        backgroundColor: '#FFF',
+        height: 50,
+        width: 150,
+        justifyContent: 'center',
+        borderRadius: 40,
+        alignItems: 'center',
+        bottom:60
+    },
 
 
 })
