@@ -13,6 +13,7 @@ import { LogBox } from 'react-native';
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",
 ]);
+LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
 const App = () => {
   return (
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems:'center',
+    alignItems: 'center',
     backgroundColor: '#FFF'
   }
 
