@@ -18,7 +18,7 @@ const Index = () => {
                 screenOptions={{
                     headerTitleAlign: 'center',
                     headerStyle: {
-                        backgroundColor: '#37B6EE'
+                        backgroundColor: '#04244B'
                     },
                     headerTintColor: '#FFF',
                     headerTitleStyle: {

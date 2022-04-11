@@ -6,8 +6,6 @@ import {
 } from 'react-native';
 
 import NavigationStack from './src/NavigationStack/Index';
-
-
 import { LogBox } from 'react-native';
 
 LogBox.ignoreLogs([
@@ -17,9 +15,7 @@ LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
 const App = () => {
   return (
-
     <NavigationStack />
-
   );
 };
 

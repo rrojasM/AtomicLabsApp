@@ -121,7 +121,6 @@ const styles = StyleSheet.create({
         bottom: 10,
         width: WIDTH,
         height: HEIGHT,
-        /* position: 'relative', */
     },
 
     title: {
@@ -129,7 +128,6 @@ const styles = StyleSheet.create({
         fontSize: 35,
         fontWeight: 'bold',
         textAlign: 'center',
-
     },
     headerTitle: {
         margin: 10,
@@ -145,9 +143,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         bottom:60
     },
-
-
 })
-
 
 export default Home;

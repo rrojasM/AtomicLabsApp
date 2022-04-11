@@ -3,7 +3,7 @@ import {
   StyleSheet, Text,
   View, TextInput,
   TouchableHighlight, Dimensions,
-  ImageBackground, Image, Alert,
+  ImageBackground, Image,
   TouchableWithoutFeedback, Keyboard
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -27,8 +27,6 @@ const Form = ({ navigation }) => {
         }}
 
         onSubmit={(values) => {
-         /*  navigation.navigate("ConfirmPhone") */
-
           values.name;
           values.lastName;
         }}

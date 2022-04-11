@@ -19,13 +19,10 @@ const ConfirmPhone = ({ navigation }) => {
     const [phoneNumber, setphoneNumber] = useState();
 
     const validatePhone = (num) => {
-        console.log('PhoneNumber', num);
-        ;
-
         if (num === undefined) {
             console.log('error');
         } else {
-
+            navigation.navigate("ConfirmEmail")
         }
     }
 

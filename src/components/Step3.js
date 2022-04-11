@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#E34F1E'
     }
-
 })
 
 export default Step3;

@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-    StyleSheet, Text,
+    StyleSheet, 
+    Text,
     View,
     Dimensions,
-    ImageBackground, Image
+    ImageBackground, 
+    Image
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-
 import Footer from '../components/Footer';
 
 const WIDTH = Dimensions.get('window').width;
