@@ -51,7 +51,7 @@ const Step2 = () => {
                                             style={styles.image}
                                             source={require('../assets/GroupUser.png')}
                                         />
-                                        <Text style={[styles.desc, { fontWeight: 'bold' }]}>{item.name}</Text>
+                                        <Text style={[styles.desc, { fontWeight: 'bold', fontSize:30 }]}>{item.name}</Text>
                                         <Text style={styles.desc}>{item.desc}</Text>
                                     </View>
                                 </Card>
@@ -71,7 +71,7 @@ const Step2 = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
+        top:50
     },
     image: {
         width: 50,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     desc: {
-        fontSize: 18,
+        fontSize: 20,
         color: '#FFF',
         textAlign: 'center',
         bottom: 10

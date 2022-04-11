@@ -5,11 +5,9 @@ import {
     StyleSheet,
     Text,
     View,
-    Platform,
     Dimensions,
     TouchableWithoutFeedback,
     TouchableHighlight,
-
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -17,7 +15,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Step1 from '../components/Step1';
 import Step2 from '../components/Step2';
 import Footer from '../components/Footer';
-import { Button } from 'react-native-elements';
+import Step3 from '../components/Step3';
 
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
@@ -93,6 +91,10 @@ const Home = ({ navigation }) => {
 
                     <View>
                         <Step1 />
+                    </View>
+
+                    <View>
+                        <Step3 />
                     </View>
 
                     <View>
