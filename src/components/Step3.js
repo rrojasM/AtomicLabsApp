@@ -4,10 +4,15 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 const Step3 = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}><Text style={{ color: '#FFF' }}>!TE ENCANTARA</Text> TRABAJAR CON NOSOTROS!</Text>
-            <View style={{ alignItems:'center', justifyContent: 'center' }} >
+            <View>
+                <Text style={styles.title}>
+                    <Text style={{ color: '#FFF' }}>!TE ENCANTARA</Text>
+                    TRABAJAR CON NOSOTROS!
+                </Text>
+            </View>
+            <View style={{ alignItems: 'center', justifyContent: 'center', alignContent: 'space-around' }} >
                 <Image
-                    style={{ width: 370, height: 100, top:20}}
+                    style={{ width: 390, height: 120, marginVertical: 30, top: 20 }}
                     source={require('../assets/Group4040.png')}
                 />
             </View>
@@ -19,14 +24,15 @@ const Step3 = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        top:35,
-        padding:10
+        top: 35,
+        padding: 10,
+        marginVertical: 20,
     },
     title: {
-        fontSize: 30,
+        fontSize: 29,
         textAlign: 'center',
         fontWeight: 'bold',
-        color: '#E34F1E'
+        color: '#E34F1E',
     }
 })
 

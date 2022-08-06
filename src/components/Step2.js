@@ -29,7 +29,11 @@ const Step2 = () => {
     return (
         <>
             <View style={styles.container}>
-                <Text style={styles.title}><Text style={{color:'#FFF'}}>NUESTRO</Text> EQUIPO</Text>
+                <View style={{ height: 100 }}>
+                    <Text style={styles.title}>
+                        <Text style={{ color: '#FFF' }}>NUESTRO </Text> EQUIPO
+                    </Text>
+                </View>
                 <FlatList
                     data={users}
                     keyExtractor={item => item.id}
@@ -39,8 +43,8 @@ const Step2 = () => {
                                 <Card
                                     containerStyle={{
                                         backgroundColor: '#02548C',
-                                        height: 250,
-                                        borderRadius: 10,
+                                        height: 190,
+                                        borderRadius: 5,
                                         borderColor: '#02548C',
                                         justifyContent: 'center'
                                     }}
@@ -50,7 +54,7 @@ const Step2 = () => {
                                             style={styles.image}
                                             source={require('../assets/GroupUser.png')}
                                         />
-                                        <Text style={[styles.desc, { fontWeight: 'bold', fontSize:30 }]}>{item.name}</Text>
+                                        <Text style={[styles.desc, { fontWeight: 'bold', fontSize: 30 }]}>{item.name}</Text>
                                         <Text style={styles.desc}>{item.desc}</Text>
                                     </View>
                                 </Card>
@@ -70,16 +74,18 @@ const Step2 = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        top:50
+        top: 10,
+        marginHorizontal: 5,
     },
     image: {
         width: 50,
-        height: 90,
+        height: 80,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginBottom: 10
     },
     desc: {
-        fontSize: 20,
+        fontSize: 18,
         color: '#FFF',
         textAlign: 'center',
         bottom: 10
@@ -88,7 +94,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         textAlign: 'center',
         fontWeight: 'bold',
-        color: '#E34F1E'
+        color: '#E34F1E',
+        top: 50
     }
 
 })

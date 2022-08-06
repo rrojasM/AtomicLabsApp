@@ -53,8 +53,6 @@ const Home = ({ navigation }) => {
                                 <Text style={{ color: '#FFF' }}>dentro del equipo</Text>{"\n"}
                                 ATOMIC <Text style={{ color: '#FFF' }} >LABS</Text>
                             </Text>
-
-
                         </View>
 
                         <View style={{ justifyContent: 'center', alignItems: 'center', margin: 10 }}>
@@ -66,16 +64,13 @@ const Home = ({ navigation }) => {
                                     source={require('../assets/Group4013x.png')}
                                 />
                             </TouchableWithoutFeedback>
-
                             <Text style={{ color: '#FFF', fontSize: 25, fontWeight: 'bold' }}>Quiero saber más</Text>
                         </View>
                         <View style={{ alignContent: 'center', justifyContent: 'center' }} >
                             <Image
-                                style={{ width: 350, height: 300, marginVertical: 100, marginLeft: 20, bottom:10 }}
+                                style={{ width: 350, height: 300, marginVertical: 100, marginLeft: 20, bottom: 10 }}
                                 source={require('../assets/Group4032.png')}
                             />
-
-
                         </View>
 
                         <View style={{ alignItems: 'center' }}>
@@ -83,7 +78,7 @@ const Home = ({ navigation }) => {
                                 style={styles.button}
                                 onPress={() => navigation.navigate("Form")}
                             >
-                                <Text style={{ color: '#00609C', textAlign: 'center', fontWeight:'500' }} >!Quiero ser parte!</Text>
+                                <Text style={{ color: '#00609C', textAlign: 'center', fontWeight: '500', fontSize: 20 }} >!Quiero ser parte!</Text>
                             </TouchableHighlight>
                         </View>
 
@@ -137,11 +132,11 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#FFF',
         height: 50,
-        width: 150,
+        width: 190,
         justifyContent: 'center',
         borderRadius: 40,
         alignItems: 'center',
-        bottom:60
+        bottom: 60
     },
 })
 

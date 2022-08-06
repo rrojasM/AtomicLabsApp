@@ -1,16 +1,12 @@
 import React from 'react';
 import {
-  StyleSheet,
-  View,
-  Text
+  StyleSheet
 } from 'react-native';
 
 import NavigationStack from './src/NavigationStack/Index';
 import { LogBox } from 'react-native';
 
-LogBox.ignoreLogs([
-  "[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",
-]);
+LogBox.ignoreLogs(["[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",]);
 LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
 const App = () => {
