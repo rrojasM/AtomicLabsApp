@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     desc: {
         fontSize: 20,

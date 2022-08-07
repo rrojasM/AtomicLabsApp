@@ -66,14 +66,15 @@ const Home = ({ navigation }) => {
                             </TouchableWithoutFeedback>
                             <Text style={{ color: '#FFF', fontSize: 25, fontWeight: 'bold' }}>Quiero saber más</Text>
                         </View>
-                        <View style={{ alignContent: 'center', justifyContent: 'center' }} >
+
+                        <View style={{ alignContent: 'center', justifyContent: 'center', bottom: 40 }} >
                             <Image
                                 style={{ width: 350, height: 300, marginVertical: 100, marginLeft: 20, bottom: 10 }}
                                 source={require('../assets/Group4032.png')}
                             />
                         </View>
 
-                        <View style={{ alignItems: 'center' }}>
+                        <View style={{ alignItems: 'center', bottom: 35}}>
                             <TouchableHighlight
                                 style={styles.button}
                                 onPress={() => navigation.navigate("Form")}

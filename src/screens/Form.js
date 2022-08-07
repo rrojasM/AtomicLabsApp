@@ -44,7 +44,9 @@ const Form = ({ navigation }) => {
               <ImageBackground
                 style={{
                   width: WIDTH,
-                  height: HEIGHT * 1.2
+                  height: HEIGHT * 1.2,
+                  alignSelf:'stretch'
+
                 }}
                 resizeMode='cover'
                 source={require('../assets/MaskGroup.png')}
@@ -117,11 +119,14 @@ const Form = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    bottom: 10,
-    backgroundColor: '#04244B'
+    backgroundColor: '#04244B',
+    backfaceVisibility: 'visible',
+    alignSelf:'stretch',
+    marginTop: -10
   },
   form: {
-    padding: 10
+    padding: 10,
+    margin: 5
   },
   label: {
     color: '#FFF',

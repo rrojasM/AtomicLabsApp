@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-    StyleSheet, 
+    StyleSheet,
     Text,
     View,
     Dimensions,
-    ImageBackground, 
+    ImageBackground,
     Image
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -27,7 +27,10 @@ const ConfirmEmail = () => {
             >
                 <View style={styles.form}>
                     <Text style={[styles.title, { color: '#FFF' }]} >TUS DATOS</Text>
-                    <Text style={[styles.title, { color: '#E34F1E' }]}><Text style={{ color: '#FFF' }}>HA SIDO</Text> ENVIADOS CON ÉXITO</Text>
+                    <Text style={[styles.title, { color: '#E34F1E' }]}>
+                        <Text style={{ color: '#FFF' }}>HA SIDO</Text>
+                        ENVIADOS CON ÉXITO
+                    </Text>
                 </View>
 
                 <View style={styles.form}>
@@ -38,7 +41,7 @@ const ConfirmEmail = () => {
                     </Text>
                     <View style={{ height: 20 }} />
                     <Text style={styles.info}>
-                        Recuerda revisar tu bandeja de SPAM 
+                        Recuerda revisar tu bandeja de SPAM
                         !Esperamos verte pronto!
                     </Text>
                     <View style={{ alignItems: 'center', top: 3 }}>
@@ -63,11 +66,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         bottom: 10,
-        backgroundColor: '#04244B'
+        backgroundColor: '#04244B',
+        backfaceVisibility: 'visible',
+        alignSelf: 'stretch',
+        marginBottom: -10
     },
     form: {
         padding: 10
-    },    
+    },
     title: {
         fontSize: 35,
         fontWeight: 'bold',
@@ -80,7 +86,7 @@ const styles = StyleSheet.create({
         top: 5
     },
     imageBody: {
-        top:10,
+        top: 10,
         width: 375,
         height: 420,
         alignItems: 'center'

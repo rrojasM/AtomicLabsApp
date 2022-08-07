@@ -38,7 +38,7 @@ const ConfirmPhone = ({ navigation }) => {
             >
                 <View style={styles.form}>
                     <Text style={[styles.title, { color: '#FFF' }]} >VALIDA TU</Text>
-                    <Text style={[styles.title, { color: '#E34F1E' }]}>CELULAR</Text>
+                    <Text style={[styles.title, { color: '#E34F1E'}]}>CELULAR</Text>
                 </View>
 
                 <View style={styles.form}>
@@ -92,10 +92,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         bottom: 10,
-        backgroundColor: '#04244B'
+        backgroundColor: '#04244B',
+        backfaceVisibility: 'visible',
+        alignSelf:'stretch',
+        marginBottom: -10
     },
     form: {
-        padding: 10
+        padding: 10,
     },
     label: {
         color: '#FFF',
