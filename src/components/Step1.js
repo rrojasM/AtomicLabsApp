@@ -27,13 +27,15 @@ const data = [
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 
+console.log('ANCHO', WIDTH, 'ALTO', HEIGHT);
+
 const Step1 = () => {
     return (
         <>
             <View style={styles.container}>
                 <Text style={styles.title}>
                     SOMOS EL BRAZO DERECHO
-                    <Text style={{ color: '#FB4C0C' }}>DE LA TECNOLOGÍA</Text>
+                    <Text style={{ color: '#FB4C0C' }}> DE LA TECNOLOGÍA</Text>
                 </Text>
 
                 <FlatList
@@ -48,7 +50,7 @@ const Step1 = () => {
                                         backgroundColor: '#000',
                                         width: WIDTH - 30,
                                         height: HEIGHT - 300,
-                                        borderRadius: 10,
+                                        borderRadius: 5,
                                         justifyContent: 'center'
                                     }}
                                 >

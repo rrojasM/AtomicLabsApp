@@ -26,9 +26,12 @@ const Form = ({ navigation }) => {
           lastName: ''
         }}
 
-        onSubmit={(values) => {
-          values.name;
-          values.lastName;
+        onSubmit={values => {
+          console.log('VALORES ', values);
+          if(values.name  !== '' && values.lastName !== ''){
+            console.log('AVANZA A SIGUIENTE PANTALLA');
+            navigation.navigate("ConfirmPhone")          
+          }
         }}
 
         validationSchema={
@@ -38,14 +41,14 @@ const Form = ({ navigation }) => {
           })
         }
       >
-        {({ values, errors, setFieldTouched, touched, isValid, handleChange, handleSubmit }) => (
+        {({ values, errors, setFieldTouched, touched, handleChange, handleSubmit }) => (
           <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
             <ScrollView style={styles.container} nestedScrollEnabled={true} >
               <ImageBackground
                 style={{
                   width: WIDTH,
                   height: HEIGHT * 1.2,
-                  alignSelf:'stretch'
+                  alignSelf: 'stretch'
 
                 }}
                 resizeMode='cover'
@@ -79,12 +82,18 @@ const Form = ({ navigation }) => {
                     <Text style={styles.label} >Apellidos</Text>
                     <TextInput
                       style={styles.textInput}
+                      value={values.lastName}
+                      onBlur={() => setFieldTouched('lastName')}
+                      onChangeText={handleChange('lastName')}
                     />
+                    {touched.lastName && errors.lastName &&
+                      <Text style={{ fontSize: 11, color: 'red' }}>{errors.lastName}</Text>
+                    }
                   </View>
 
                   <View style={{ alignItems: 'center', top: 50 }}>
                     <TouchableHighlight
-                      onPress={()=> navigation.navigate("ConfirmPhone")}
+                      onPress={handleSubmit}
                       style={styles.button}
                     >
                       <Text style={{ color: '#FFF', textAlign: 'center' }}>Enviar</Text>
@@ -121,7 +130,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#04244B',
     backfaceVisibility: 'visible',
-    alignSelf:'stretch',
+    alignSelf: 'stretch',
     marginTop: -10
   },
   form: {

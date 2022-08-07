@@ -6,7 +6,7 @@ const Step3 = () => {
         <View style={styles.container}>
             <View>
                 <Text style={styles.title}>
-                    <Text style={{ color: '#FFF' }}>!TE ENCANTARA</Text>
+                    <Text style={{ color: '#FFF' }}>!TE ENCANTARA <Text> </Text></Text>
                     TRABAJAR CON NOSOTROS!
                 </Text>
             </View>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     title: {
-        fontSize: 29,
+        fontSize: 28,
         textAlign: 'center',
         fontWeight: 'bold',
         color: '#E34F1E',

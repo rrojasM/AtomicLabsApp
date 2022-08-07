@@ -28,8 +28,8 @@ const ConfirmEmail = () => {
                 <View style={styles.form}>
                     <Text style={[styles.title, { color: '#FFF' }]} >TUS DATOS</Text>
                     <Text style={[styles.title, { color: '#E34F1E' }]}>
-                        <Text style={{ color: '#FFF' }}>HA SIDO</Text>
-                        ENVIADOS CON ÉXITO
+                        <Text style={{ color: '#FFF' }}>HAN SIDO</Text>
+                        <Text> </Text> ENVIADOS CON ÉXITO
                     </Text>
                 </View>
 

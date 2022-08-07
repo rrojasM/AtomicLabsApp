@@ -28,61 +28,88 @@ const ConfirmPhone = ({ navigation }) => {
 
     return (
         <ScrollView style={styles.container} nestedScrollEnabled={true}>
-            <ImageBackground
-                style={{
-                    width: WIDTH,
-                    height: HEIGHT * 1.2
+            <Formik
+                initialValues={{
+                    phone: ''
                 }}
-                resizeMode='cover'
-                source={require('../assets/MaskGroup.png')}
+
+                onSubmit={values => {
+                    if (values.phone !== '') {
+                        console.log('SIGUIENTE PANTALLA');
+                        navigation.navigate("ConfirmEmail")
+                    }
+                }}
+
+                validationSchema={
+                    yup.object().shape({
+                        phone: yup.number().min(5, ({ min }) => `El télefono debe contener ${min} caracteres`).required('Télefono es Requerido').nullable(),
+                    })
+                }
             >
-                <View style={styles.form}>
-                    <Text style={[styles.title, { color: '#FFF' }]} >VALIDA TU</Text>
-                    <Text style={[styles.title, { color: '#E34F1E'}]}>CELULAR</Text>
-                </View>
-
-                <View style={styles.form}>
-
-                    <Text style={styles.info}>Necesitamos validar tu número para continuar </Text>
-                    <View style={{ height: 20 }} />
-                    <Text style={styles.info}>Ingresa tu Número a 10 dígitos y te enviaremos un código SMS. </Text>
-
-
-                    <View style={{ height: 35 }} />
-
-                    <View>
-                        <Text style={styles.label} >Número de Celular</Text>
-                        <TextInput
-                            keyboardType='numeric'
-                            maxLength={10}
-                            style={styles.textInput}
-                            value={phoneNumber}
-                            onChangeText={(phoneN) => setphoneNumber(phoneN)}
-                        />
-                    </View>
-
-                    <View style={{ alignItems: 'center', top: 50 }}>
-                        <TouchableHighlight
-                            onPress={() => navigation.navigate("ConfirmEmail")}
-                            style={styles.button}
-                        >
-                            <Text style={{ color: '#FFF', textAlign: 'center' }}>Enviar</Text>
-                        </TouchableHighlight>
-                    </View>
-
-                    <View style={{ alignItems: 'center', top: 50 }}>
-                        <Image
-                            style={styles.imageBody}
+                {({ values, errors, setFieldTouched, touched, handleChange, handleSubmit }) => (
+                    <>
+                        <ImageBackground
+                            style={{
+                                width: WIDTH,
+                                height: HEIGHT * 1.2
+                            }}
                             resizeMode='cover'
-                            source={require('../assets/Group4034.png')}
-                        />
-                    </View>
-                </View>
-            </ImageBackground>
+                            source={require('../assets/MaskGroup.png')}
+                        >
+                            <View style={styles.form}>
+                                <Text style={[styles.title, { color: '#FFF' }]} >VALIDA TU</Text>
+                                <Text style={[styles.title, { color: '#E34F1E' }]}>CELULAR</Text>
+                            </View>
 
-            <View>
-                <Footer />
-            </View>
+                            <View style={styles.form}>
+
+                                <Text style={styles.info}>Necesitamos validar tu número para continuar </Text>
+                                <View style={{ height: 20 }} />
+                                <Text style={styles.info}>Ingresa tu Número a 10 dígitos y te enviaremos un código SMS. </Text>
+
+
+                                <View style={{ height: 35 }} />
+
+                                <View>
+                                    <Text style={styles.label} >Número de Celular</Text>
+                                    <TextInput
+                                        keyboardType='numeric'
+                                        maxLength={10}
+                                        style={styles.textInput}
+                                        value={values.phone}
+                                        onBlur={() => setFieldTouched('phone')}
+                                        onChangeText={handleChange('phone')}
+                                    />
+                                    {touched.phone && errors.phone &&
+                                        <Text style={{ fontSize: 11, color: 'red' }}>{errors.phone}</Text>
+                                    }
+                                </View>
+
+                                <View style={{ alignItems: 'center', top: 50 }}>
+                                    <TouchableHighlight
+                                        onPress={handleSubmit}
+                                        style={styles.button}
+                                    >
+                                        <Text style={{ color: '#FFF', textAlign: 'center' }}>Continuar</Text>
+                                    </TouchableHighlight>
+                                </View>
+
+                                <View style={{ alignItems: 'center', top: 50 }}>
+                                    <Image
+                                        style={styles.imageBody}
+                                        resizeMode='cover'
+                                        source={require('../assets/Group4034.png')}
+                                    />
+                                </View>
+                            </View>
+                        </ImageBackground>
+
+                        <View>
+                            <Footer />
+                        </View>
+                    </>
+                )}
+            </Formik>
 
         </ScrollView>
     )
@@ -94,7 +121,7 @@ const styles = StyleSheet.create({
         bottom: 10,
         backgroundColor: '#04244B',
         backfaceVisibility: 'visible',
-        alignSelf:'stretch',
+        alignSelf: 'stretch',
         marginBottom: -10
     },
     form: {
@@ -132,7 +159,8 @@ const styles = StyleSheet.create({
     imageBody: {
         width: 390,
         height: 500,
-        alignItems: 'center'
+        alignItems: 'center',
+        bottom: 20
     }
 
 })
