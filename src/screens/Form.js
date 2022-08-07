@@ -28,16 +28,16 @@ const Form = ({ navigation }) => {
 
         onSubmit={values => {
           console.log('VALORES ', values);
-          if(values.name  !== '' && values.lastName !== ''){
+          if (values.name !== '' && values.lastName !== '') {
             console.log('AVANZA A SIGUIENTE PANTALLA');
-            navigation.navigate("ConfirmPhone")          
+            navigation.navigate("ConfirmPhone");
           }
         }}
 
         validationSchema={
           yup.object().shape({
             name: yup.string().min(5, ({ min }) => `El nombre deberá tener mínimo ${min} caracteres`).required('Nombre es Requerido').nullable(),
-            lastName: yup.string().required().nullable()
+            lastName: yup.string().min(5, ({ min }) => `El Apellido deberá tener mínimo ${min} caracteres`).required('Apellido es Requerido').nullable()
           })
         }
       >
